@@ -153,6 +153,7 @@ TAssetPtr<UTexture> UUnrealCSVBPLibrary::GetTextureFromDataTable(UDataTable* Tab
 			ID = AssetPtr.GetUniqueID();
 		}
 
+		//Synchronously load assets 
 		FStreamableManager StreamableManager;
 		UTexture* TextureAsset = Cast<UTexture>(StreamableManager.SynchronousLoad(ID));
 		TAssetPtr<UTexture> TextureAssetPtr = TextureAsset;
